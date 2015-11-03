@@ -18,7 +18,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/adding_links' do
-    @google =
+    Link.create(url: params[:add_url], title: params[:add_title])
     redirect('/links')
   end
 
