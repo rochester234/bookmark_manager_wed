@@ -2,6 +2,8 @@ require 'sinatra/base'
 require './app/models/link'
 # require File.join(File.dirname('views'))
 
+ENV['RACK_ENV'] ||= 'development'
+
 class BookmarkManager < Sinatra::Base
   set :views, proc {File.join(root, '..', 'views')}
 

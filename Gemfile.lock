@@ -126,6 +126,3 @@ DEPENDENCIES
   rspec-sinatra
   sinatra
   tree
-
-BUNDLED WITH
-   1.10.6
