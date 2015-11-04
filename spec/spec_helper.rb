@@ -1,3 +1,4 @@
+ENV['RACK_ENV'] = 'test'
 require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
@@ -49,7 +50,7 @@ RSpec.configure do |config|
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
   end
-  
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with :truncation
