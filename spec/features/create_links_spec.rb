@@ -5,7 +5,7 @@ feature 'Create a new link' do
     fill_in('url', with: 'www.bbc.co.uk')
     click_button('Submit')
     within 'ul#links' do
-      expect(page).to have_content('www.bbc.co.uk')
+      expect(page).to have_content('BBC')
     end
   end
 end

@@ -4,7 +4,7 @@ feature 'View Links' do
     visit '/'
     click_button 'View Bookmarks'
     within 'ul#links' do
-      expect(page).to have_content("www.google.com")
+      expect(page).to have_content('google')
     end
   end
 end
