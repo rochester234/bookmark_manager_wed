@@ -7,5 +7,7 @@ group :test do
   gem 'capybara'
   gem 'rspec'
   gem 'rubocop'
+  gem 'data_mapper'
+  gem 'dm-postgres-adapter'
 end
 

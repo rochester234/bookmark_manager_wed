@@ -1,4 +1,4 @@
-require 'spec_helper'
+require './app/models/link'
 
 feature 'View Links' do
   scenario 'it shows stored links on homepage' do
