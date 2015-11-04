@@ -1,8 +1,9 @@
 require 'sinatra/base'
-require './app/modul/link'
+require './app/models/link'
 # require File.join(File.dirname('views'))
 
 class BookmarkManager < Sinatra::Base
+  set :views, proc {File.join(root, '..', 'views')}
 
   get '/' do
     erb :index
@@ -18,7 +19,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/adding_links' do
-    Link.create(url: params[:add_url], title: params[:add_title])
+     Link.create(url: params[:add_url], title: params[:add_title])
     redirect('/links')
   end
 
