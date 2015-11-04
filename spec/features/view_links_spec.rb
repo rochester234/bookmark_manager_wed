@@ -1,7 +1,3 @@
-require './app/models/link'
-require 'spec_helper'
-
-
 feature 'View Links' do
   scenario 'it shows stored links on homepage' do
     Link.create(title: 'google', url: 'www.google.com')
@@ -12,3 +8,5 @@ feature 'View Links' do
     end
   end
 end
+
+
