@@ -6,6 +6,10 @@
   <% @links.each do |link| %>
     <li>
       <%= link.title %> <%= link.url %>
+      tags: 
+      <% @tags.each do |tag| %>
+        <%= tag.tag %>
+      <% end %>
     </li>
     <% end %>
 </ul>

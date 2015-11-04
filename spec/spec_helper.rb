@@ -1,9 +1,11 @@
 ENV['RACK_ENV'] = 'test'
+
 require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
 require 'database_cleaner'
 
+require './app/data_mapper_setup.rb'
 require './app/app.rb'
 require './app/models/link'
 
