@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/link'
+require './app/modul/link'
 # require File.join(File.dirname('views'))
 
 class BookmarkManager < Sinatra::Base
