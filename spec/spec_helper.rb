@@ -1,8 +1,8 @@
 require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
+
 require './app/app.rb'
-#require 'sinatra'
 require './app/models/link'
 
 Capybara.app = BookmarkManager
