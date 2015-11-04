@@ -13,6 +13,7 @@ class BookmarkManager < Sinatra::Base
 
   get '/links' do
     @links = Link.all
+    @tags = Tag.all
     erb(:links)
   end
 
@@ -22,6 +23,7 @@ class BookmarkManager < Sinatra::Base
 
   post '/links/new/add' do
     Link.create(title: params[:title], url: params[:url])
+    Tag.create(tag: params[:tag])
     redirect :links
   end
 
