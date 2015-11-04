@@ -6,7 +6,7 @@ feature 'add tag' do
     fill_in 'name', with: 'awful'
     click_button 'Submit'
     within 'ul#links' do
-      expect(page).to have_content("tags: awful")
+      expect(page).to have_content("awful")
     end
   end
 end

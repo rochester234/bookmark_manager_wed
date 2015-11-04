@@ -14,7 +14,6 @@ class BookmarkManager < Sinatra::Base
 
   get '/links' do
     @links = Link.all
-    @tags = Tag.all
     erb(:links)
   end
 
@@ -31,7 +30,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/tags/:filter_by' do
-    @links = Link.all(:tags => {name: params[:filter_by]})
+    tag = Tag.first(name: params[:filter_by])
+    @links = tag ? tag.links : []
     erb :tags
   end
 

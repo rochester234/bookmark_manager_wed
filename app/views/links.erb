@@ -5,11 +5,8 @@
 <ul id='links'>
   <% @links.each do |link| %>
     <li>
-      <a href='<%= link.url %>'><%= link.title %></a>
-      tags: 
-      <% @tags.each do |tag| %>
-        <%= tag.name %>
-      <% end %>
+      <a href='<%= link.url %>'><%= link.title %></a> (
+      <%= link.tags.map { |tag| tag.name }.join(', ') %>)
     </li>
     <% end %>
 </ul>
