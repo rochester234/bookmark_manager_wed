@@ -6,9 +6,9 @@
   <% @links.each do |link| %>
     <li>
       <%= link.title %> <%= link.url %>
-      tags: 
+      tags:
       <% @tags.each do |tag| %>
-        <%= tag.tag %>
+        <%= tag.name %>
       <% end %>
     </li>
     <% end %>
