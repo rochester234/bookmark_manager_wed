@@ -1,0 +1,12 @@
+<form action='/links/new' method='get'>
+  <input value='Add bookmark' type='submit'>
+</form>
+
+<ul id='links'>
+  <% @links.each do |link| %>
+    <li>
+      <a href='<%= link.url %>'><%= link.title %></a> (
+      <%= link.tags.map { |tag| tag.name }.join(', ') %>)
+    </li>
+    <% end %>
+</ul>
