@@ -7,7 +7,6 @@ require_relative 'models/link'
 
 
 class BookmarkManager < Sinatra::Base
-
   get '/' do
     erb(:index)
   end
@@ -33,6 +32,11 @@ class BookmarkManager < Sinatra::Base
     tag = Tag.first(name: params[:filter_by])
     @links = tag ? tag.links : []
     erb :tags
+  end
+
+  post '/tags' do
+    @name = params[:name]
+    redirect "/tags/#{@name}"
   end
 
   run! if app_file == $0
