@@ -21,10 +21,21 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/links/new/add' do
-    link = Link.create(title: params[:title], url: params[:url])
-    tag = Tag.create(name: params[:name])
-    link.tags << tag
-    link.save
+    @tag = Tag.create(name: params[:name])
+    Link.find do |link|
+      if link.title == params[:title]
+        @existing_link = link
+      end
+    end
+    if @existing_link != nil
+      @existing_link.tags << @tag
+      @existing_link.save
+    else
+        new_link = Link.create(title: params[:title], url: params[:url])
+        new_link.tags << @tag
+        new_link.save
+    end
+
     redirect :links
   end
 
