@@ -4,7 +4,7 @@ require './app/models/tag'
 require './app/models/link'
 
 DataMapper::Logger.new($stdout, :debug)
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_manager_test")
 DataMapper.auto_upgrade!
 DataMapper.finalize
 Link.finalize

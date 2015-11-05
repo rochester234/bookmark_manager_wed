@@ -32,14 +32,14 @@ Capybara.app = BookmarkManager
 RSpec.configure do |config|
   config.include Capybara::DSL
 
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction # added for the cleaner
-    DatabaseCleaner.clean_with(:truncation) # added for the cleaner
-  end
-
-    config.before(:each) do # added for the cleaner
-      DatabaseCleaner.start
-    end
+  # config.before(:suite) do
+  #   DatabaseCleaner.strategy = :transaction # added for the cleaner
+  #   DatabaseCleaner.clean_with(:truncation) # added for the cleaner
+  # end
+    #
+    # config.before(:each) do # added for the cleaner
+    #   DatabaseCleaner.start
+    # end
 
     config.after(:each) do  # added for the cleaner
       DatabaseCleaner.clean
