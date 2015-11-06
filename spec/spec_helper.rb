@@ -4,6 +4,7 @@ require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'web_helper'
 
 require './app/data_mapper_setup.rb'
 require './app/app.rb'
